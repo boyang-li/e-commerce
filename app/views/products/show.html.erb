@@ -1,0 +1,55 @@
+<%- model_class = Product -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:title) %>:</strong></dt>
+  <dd><%= @product.title %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:description) %>:</strong></dt>
+  <dd><%= @product.description %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:vender_id) %>:</strong></dt>
+  <dd><%= @product.vender_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:active) %>:</strong></dt>
+  <dd><%= @product.active %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:min) %>:</strong></dt>
+  <dd><%= @product.min %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:max) %>:</strong></dt>
+  <dd><%= @product.max %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:start_time) %>:</strong></dt>
+  <dd><%= @product.start_time %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:end_time) %>:</strong></dt>
+  <dd><%= @product.end_time %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:expire_on) %>:</strong></dt>
+  <dd><%= @product.expire_on %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:regular_price) %>:</strong></dt>
+  <dd><%= @product.regular_price %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:actual_price) %>:</strong></dt>
+  <dd><%= @product.actual_price %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:product_fee) %>:</strong></dt>
+  <dd><%= @product.product_fee %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:currency) %>:</strong></dt>
+  <dd><%= @product.currency %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:image_url) %>:</strong></dt>
+  <dd><%= @product.image_url %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:require_shipping) %>:</strong></dt>
+  <dd><%= @product.require_shipping %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:editor) %>:</strong></dt>
+  <dd><%= @product.editor %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:payment_gateway) %>:</strong></dt>
+  <dd><%= @product.payment_gateway %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:categories_id) %>:</strong></dt>
+  <dd><%= @product.categories_id %></dd>
+</dl>
+
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              products_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_product_path(@product), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              product_path(@product),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>

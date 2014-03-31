@@ -10,6 +10,9 @@ gem 'turbolinks'
 gem 'bcrypt-ruby', '~> 3.1.2'
 # Use unicorn as the app server
 # gem 'unicorn'
+gem "therubyracer"
+gem "less-rails"
+gem "twitter-bootstrap-rails"
 
 group :development do
 	# gem 'annotate'
@@ -39,9 +42,6 @@ end
 group :assets do
 	gem 'uglifier', '>= 1.3.0'
 	gem 'coffee-rails', '~> 4.0.0'
-	gem 'therubyracer',  platforms: :ruby
-	gem 'less-rails'
-	gem 'twitter-bootstrap-rails'
 end
 
 # bundle exec rake doc:rails generates the API under doc/api.

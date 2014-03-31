@@ -1,0 +1,25 @@
+<%= simple_form_for @product, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :title %>
+  <%= f.input :description %>
+  <%= f.input :vender_id %>
+  <%= f.input :active %>
+  <%= f.input :min %>
+  <%= f.input :max %>
+  <%= f.input :start_time %>
+  <%= f.input :end_time %>
+  <%= f.input :expire_on %>
+  <%= f.input :regular_price %>
+  <%= f.input :actual_price %>
+  <%= f.input :product_fee %>
+  <%= f.input :currency %>
+  <%= f.input :image_url %>
+  <%= f.input :require_shipping %>
+  <%= f.input :editor %>
+  <%= f.input :payment_gateway %>
+  <%= f.input :categories_id %>
+  <div class="form-actions">
+    <%= f.button :submit, :class => 'btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                products_path, :class => 'btn' %>
+  </div>
+<% end %>
