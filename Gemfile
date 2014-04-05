@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails', '4.1.0.rc1'
-gem 'sqlite3'
+gem 'mysql2'
 
 gem 'jquery-rails'
 gem 'simple_form'
