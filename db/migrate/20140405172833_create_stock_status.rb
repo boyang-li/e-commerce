@@ -1,11 +1,8 @@
 class CreateStockStatus < ActiveRecord::Migration
-  def up
+  def change
     create_table :stock_statuses do |t|
+    	t.integer :language_id
     	t.string :name, limit: 32, null: false
     end
-  end
-
-  def down
-  	drop_table :stock_statuses
   end
 end

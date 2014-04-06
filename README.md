@@ -1,21 +1,21 @@
 E-COMMERCE
 ==============
 
-E-COMMERCE is a multi-purpose online-store application. You can customize it into any store you want.
+An open source e-commerce platform built with Rails 4.
 
 Hardware and Software Requirements
 ----------------------------------
 
 - Ruby (2.1.1)
 - Ruby on Rails (4.1.0rc1)
-- SQLite3
+- SQL Database (MySQL)
 
 Installation Instructions
 -------------------------
 
 1. Get a copy of the code from the remote repository and place it into local repository:
 
-        git clone "git address"
+        git clone "https://github.com/boyang-li/e-commerce.git"
 
 2. Bundle gems:
 
@@ -27,18 +27,18 @@ Installation Instructions
 
 3. Setup database:  
   
-    Modify the config/database.yml to match your database configuration on your machine.
-
-    If using MySQL, create local database with the same names in database.yml.
+    If using MySQL, create an empty database, and then modify config/database.yml file to match your database settings.
     
-    Then run migrations:
+    Run migrations:
 
-        rake db:migrate
+      rake db:migrate
+
+    Populate testing data
+
+      rake db:seed
 
 Initial Application Setup
 -------------------------
-TBD...
 
 Features
 --------
-TBD...
