@@ -1,7 +1,7 @@
-E-COMMERCE
+OpenShop
 ==============
 
-An open source e-commerce platform built with Rails 4.
+OpenShop is an open source e-commerce platform built with Ruby on Rails.
 
 Hardware and Software Requirements
 ----------------------------------
@@ -15,7 +15,7 @@ Installation Instructions
 
 1. Get a copy of the code from the remote repository and place it into local repository:
 
-        git clone "https://github.com/boyang-li/e-commerce.git"
+        git clone "https://github.com/boyang-li/openshop.git"
 
 2. Bundle gems:
 
