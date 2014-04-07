@@ -1,25 +1,36 @@
 class Product < ActiveRecord::Base
-	attr_accessor :title,
-		:description,
-		:active,
-		:min,
-		:max,
-		:start_time,
-		:end_time,
-		:expire_on,
-		:regular_price,
-		:actual_price,
-		:product_fee,
-		:currency,
-		:image_url,
-		:require_shipping,
-		:categories_id
+	has_one :product_description
+	has_many :categorizations
+	has_many :category, :throught => :categorizations
 
-	validates: :title, :description, :min, :max, :start_time, :end_time, :expire_on, :regular_price, 
-		:actual_price, :product_fee, :image_url, presence: :ture
-	validates: :regular_price, :actual_price, :product_fee, numerically: {greater_than_or_equal_to: 0.01}
-	validates: :title, uniqueness: :true
-	validates: :image_url, allow_blank: :true, format: {
+	attr_accessor :model,
+		:sku,
+		:mpn,
+		:upc,
+		:ean,
+		:jan,
+		:isbn,
+		:location,
+		:quantity,
+		:image,
+		:shipping,
+		:price,
+		:points,
+		:date_available,
+		:weight,
+		:length,
+		:width,
+		:subtract,
+		:minimum,
+		:sort_order,
+		:status,
+		:viewed
+
+	validates :model, :sku, :mpn, :upc, :ean, :jan, :isbn, :location, :quantity, :image, :shipping, 
+	  :price, :points, :date_available, :minimum, :status, :viewed, presence: :ture
+	validates :sku, uniqueness: :true
+	validates :price, numericality: {greater_than_or_equal_to: 0.01}
+	validates :image, allow_blank: :true, format: {
 		with: %r{\.(gif|jpg|png)\Z}i,
 		message: "must be an url for GIF, JPG or PNG image."
 	}

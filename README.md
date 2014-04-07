@@ -31,11 +31,11 @@ Installation Instructions
     
     Run migrations:
 
-      rake db:migrate
+      `rake db:migrate`
 
     Populate testing data
 
-      rake db:seed
+      `rake db:seed`
 
 Initial Application Setup
 -------------------------

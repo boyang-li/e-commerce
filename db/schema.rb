@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140406042911) do
+ActiveRecord::Schema.define(version: 20140407163509) do
 
   create_table "attribute_descriptions", force: true do |t|
     t.integer "attribute_id"
@@ -51,31 +51,9 @@ ActiveRecord::Schema.define(version: 20140406042911) do
     t.datetime "updated_at"
   end
 
-  create_table "categories_products", id: false, force: true do |t|
+  create_table "categorizations", id: false, force: true do |t|
     t.integer "product_id",  null: false
     t.integer "category_id", null: false
-  end
-
-  add_index "categories_products", ["category_id"], name: "index_categories_products_on_category_id", using: :btree
-  add_index "categories_products", ["product_id"], name: "index_categories_products_on_product_id", using: :btree
-
-  create_table "customer_groups", force: true do |t|
-  end
-
-  create_table "customers", force: true do |t|
-  end
-
-  create_table "length_class_descriptions", force: true do |t|
-    t.integer "length_class_id"
-    t.integer "language_id"
-    t.string  "title",           limit: 32, null: false
-    t.string  "unit",            limit: 4,  null: false
-  end
-
-  add_index "length_class_descriptions", ["length_class_id"], name: "index_length_class_descriptions_on_length_class_id", using: :btree
-
-  create_table "length_classes", force: true do |t|
-    t.decimal "value", precision: 15, scale: 8
   end
 
   create_table "manufacturers", force: true do |t|
@@ -284,15 +262,6 @@ ActiveRecord::Schema.define(version: 20140406042911) do
 
   add_index "tax_rules", ["tax_class_id"], name: "index_tax_rules_on_tax_class_id", using: :btree
   add_index "tax_rules", ["tax_rate_id"], name: "index_tax_rules_on_tax_rate_id", using: :btree
-
-  create_table "weight_class_descriptions", force: true do |t|
-    t.integer "weight_class_id"
-    t.integer "language_id"
-    t.string  "title",           limit: 32, null: false
-    t.string  "unit",            limit: 4,  null: false
-  end
-
-  add_index "weight_class_descriptions", ["weight_class_id"], name: "index_weight_class_descriptions_on_weight_class_id", using: :btree
 
   create_table "weight_classes", force: true do |t|
     t.decimal "value", precision: 15, scale: 8
