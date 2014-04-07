@@ -2,11 +2,10 @@ class ProductDescription < ActiveRecord::Base
   belongs_to :product
 
   attr_accessor :name,
-    :description
+    :description,
+    :meta_description,
+    :meta_keyword,
+    :tag
 
-  def initialize(attributes = {})
-    attributes.each do |key, value|
-      send("#{key}=", value)  
-    end
-  end
+  validates :name, :description, :meta_description, :meta_keyword, :tag, presence: :ture
 end

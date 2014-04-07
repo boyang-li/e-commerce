@@ -35,9 +35,4 @@ class Product < ActiveRecord::Base
 		message: "must be an url for GIF, JPG or PNG image."
 	}
 
-	def initialize(attributes = {})
-		attributes.each do |key, value|
-			send("#{key}=", value)	
-		end
-	end
 end
