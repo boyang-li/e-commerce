@@ -6,31 +6,7 @@ class Product < ActiveRecord::Base
 	has_many :general_attributes, through: :product_attributes
 	has_many :categorizations
 	has_many :categories, through: :categorizations
-
 	belongs_to :manufacturer
-
-	attr_accessor :model,
-		:sku,
-		:mpn,
-		:upc,
-		:ean,
-		:jan,
-		:isbn,
-		:location,
-		:quantity,
-		:image,
-		:shipping,
-		:price,
-		:points,
-		:date_available,
-		:weight,
-		:length,
-		:width,
-		:subtract,
-		:minimum,
-		:sort_order,
-		:status,
-		:viewed
 
 	validates :model, :sku, :mpn, :upc, :ean, :jan, :isbn, :location, :quantity, :image, :shipping, 
 	  :price, :points, :date_available, :minimum, :status, :viewed, presence: :ture

@@ -5,6 +5,4 @@ class GeneralAttribute < ActiveRecord::Base
 
   belongs_to :product_attribute
   belongs_to :attribute_group
-
-  attr_accessor :sort_order
 end
