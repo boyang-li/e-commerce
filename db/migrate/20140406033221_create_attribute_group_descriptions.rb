@@ -1,4 +1,4 @@
-class CreateAttributeGroupDescription < ActiveRecord::Migration
+class CreateAttributeGroupDescriptions < ActiveRecord::Migration
   def change
     create_table :attribute_group_descriptions do |t|
       t.references :attribute_group, index: true

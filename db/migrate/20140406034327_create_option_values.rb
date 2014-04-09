@@ -1,4 +1,4 @@
-class CreateOptionValue < ActiveRecord::Migration
+class CreateOptionValues < ActiveRecord::Migration
   def change
     create_table :option_values do |t|
       t.references :option, index: true

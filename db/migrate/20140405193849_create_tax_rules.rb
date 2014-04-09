@@ -1,4 +1,4 @@
-class CreateTaxRule < ActiveRecord::Migration
+class CreateTaxRules < ActiveRecord::Migration
   def change
     create_table :tax_rules do |t|
     	t.references :tax_class, index: true

@@ -1,4 +1,4 @@
-class CreateTaxRate < ActiveRecord::Migration
+class CreateTaxRates < ActiveRecord::Migration
   def change
     create_table :tax_rates do |t|
     	# t.integer :geo_zone_id

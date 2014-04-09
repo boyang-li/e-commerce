@@ -1,4 +1,4 @@
-class CreateStockStatus < ActiveRecord::Migration
+class CreateStockStatuses < ActiveRecord::Migration
   def change
     create_table :stock_statuses do |t|
     	t.integer :language_id

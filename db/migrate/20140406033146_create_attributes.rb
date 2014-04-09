@@ -1,4 +1,4 @@
-class CreateAttribute < ActiveRecord::Migration
+class CreateAttributes < ActiveRecord::Migration
   def change
     create_table :attributes do |t|
       t.references :attribute_group, index: true

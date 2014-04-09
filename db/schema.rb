@@ -91,9 +91,9 @@ ActiveRecord::Schema.define(version: 20140407163509) do
     t.integer "sort_order", limit: 3
   end
 
-  create_table "product_attributes", force: true do |t|
-    t.integer "product_id"
-    t.integer "attribute_id"
+  create_table "product_attributes", id: false, force: true do |t|
+    t.integer "product_id",   null: false
+    t.integer "attribute_id", null: false
     t.integer "language_id"
     t.text    "text",         null: false
   end
@@ -262,9 +262,5 @@ ActiveRecord::Schema.define(version: 20140407163509) do
 
   add_index "tax_rules", ["tax_class_id"], name: "index_tax_rules_on_tax_class_id", using: :btree
   add_index "tax_rules", ["tax_rate_id"], name: "index_tax_rules_on_tax_rate_id", using: :btree
-
-  create_table "weight_classes", force: true do |t|
-    t.decimal "value", precision: 15, scale: 8
-  end
 
 end

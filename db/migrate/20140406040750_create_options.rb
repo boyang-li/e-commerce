@@ -1,4 +1,4 @@
-class CreateOption < ActiveRecord::Migration
+class CreateOptions < ActiveRecord::Migration
   def change
     create_table :options do |t|
       t.string :type, limit: 32

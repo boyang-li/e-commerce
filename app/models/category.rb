@@ -1,8 +1,7 @@
 class Category < ActiveRecord::Base
   has_one :category_descriptions
-
   has_many :categorizations
-  has_many :products, :through => :categorizations
+  has_many :products, through: :categorizations
 
   # Self join on "parent_id" for category hierarchy
   has_many :subcategories, class_name: "Category",

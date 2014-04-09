@@ -1,4 +1,4 @@
-class CreateTaxClass < ActiveRecord::Migration
+class CreateTaxClasses < ActiveRecord::Migration
   def change
     create_table :tax_classes do |t|
     	t.string :title, limit: 32, null: false

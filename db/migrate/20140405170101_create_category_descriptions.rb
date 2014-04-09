@@ -1,4 +1,4 @@
-class CreateCategoryDescription < ActiveRecord::Migration
+class CreateCategoryDescriptions < ActiveRecord::Migration
   def cahnge
     create_table :category_descriptions do |t|
     	t.references :category, index: true

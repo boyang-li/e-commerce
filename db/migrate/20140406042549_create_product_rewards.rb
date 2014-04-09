@@ -1,4 +1,4 @@
-class CreateProductReward < ActiveRecord::Migration
+class CreateProductRewards < ActiveRecord::Migration
   def change
     create_table :product_rewards do |t|
       t.references :product, index: true

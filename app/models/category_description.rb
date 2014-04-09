@@ -1,5 +1,5 @@
 class CategoryDescription < ActiveRecord::Base
-  belongs_to :categories
+  belongs_to :category
 
   attr_accessor :name,
     :description,
