@@ -1,9 +1,9 @@
 class Product < ActiveRecord::Base
 	has_one :product_description
-	has_many :product_attributes
 	has_many :product_images
 	has_many :reviews
-	has_many :attributes, through: :product_attributes
+	has_many :product_attributes
+	has_many :general_attributes, through: :product_attributes
 	has_many :categorizations
 	has_many :categories, through: :categorizations
 

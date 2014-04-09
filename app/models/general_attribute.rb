@@ -1,4 +1,4 @@
-class Attribute < ActiveRecord::Base
+class GeneralAttribute < ActiveRecord::Base
   has_many :product_attributes
   has_many :products, through: :product_attributes
   has_one :attribute_description

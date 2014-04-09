@@ -33,13 +33,6 @@ ActiveRecord::Schema.define(version: 20140407163509) do
     t.integer "sort_order", limit: 3
   end
 
-  create_table "attributes", force: true do |t|
-    t.integer "attribute_group_id"
-    t.integer "sort_order",         limit: 3
-  end
-
-  add_index "attributes", ["attribute_group_id"], name: "index_attributes_on_attribute_group_id", using: :btree
-
   create_table "categories", force: true do |t|
     t.string   "image",                null: false
     t.integer  "parent_id"
@@ -55,6 +48,13 @@ ActiveRecord::Schema.define(version: 20140407163509) do
     t.integer "product_id",  null: false
     t.integer "category_id", null: false
   end
+
+  create_table "general_attributes", force: true do |t|
+    t.integer "attribute_group_id"
+    t.integer "sort_order",         limit: 3
+  end
+
+  add_index "general_attributes", ["attribute_group_id"], name: "index_general_attributes_on_attribute_group_id", using: :btree
 
   create_table "manufacturers", force: true do |t|
     t.string  "name",       limit: 64, null: false
