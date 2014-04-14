@@ -13,6 +13,6 @@
  *= require_tree .
  *= require_self
  *= require bootstrap_and_overrides
- *= require docs
+ *= require main
  *= require prettify
  */

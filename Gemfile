@@ -1,7 +1,11 @@
 source 'https://rubygems.org'
 
-gem 'rails', '4.1.0.rc1'
+gem 'rails', '4.1.0'
 gem 'mysql2'
+
+gem 'sass-rails'
+gem 'coffee-rails', '~> 4.0.0'
+gem 'uglifier', '>= 1.3.0'
 
 gem 'jquery-rails'
 gem 'simple_form'
@@ -38,12 +42,7 @@ group :development, :test do
   gem 'json_spec'
 end
 
-# Gems used only for assets and not required
-# in production environments by default.
-group :assets do
-	gem 'uglifier', '>= 1.3.0'
-	gem 'coffee-rails', '~> 4.0.0'
-end
+
 
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0',          group: :doc
