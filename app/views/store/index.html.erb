@@ -2,8 +2,6 @@
 <p id="notice"><%= notice %></p>
 <% end %>
 
-<h1>Products Catalog</h1>
-
 <% @products.each do |product| %>
   <% cache ['entry', product] do %>
 	<div class="entry">

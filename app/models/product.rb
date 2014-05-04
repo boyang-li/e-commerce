@@ -8,7 +8,7 @@ class Product < ActiveRecord::Base
 	has_many :categories, through: :categorizations
 	belongs_to :manufacturer
 
-	validates :model, :sku, :mpn, :upc, :ean, :jan, :isbn, :location, :quantity, :image, :shipping, 
+	validates :model, :sku, :mpn, :upc, :ean, :jan, :isbn, :location, :quantity, :image, :shipping,
 	  :price, :points, :date_available, :minimum, :status, :viewed, presence: :ture
 	validates :sku, uniqueness: :true
 	validates :price, numericality: {greater_than_or_equal_to: 0.01}
@@ -16,5 +16,9 @@ class Product < ActiveRecord::Base
 		with: %r{\.(gif|jpg|png)\Z}i,
 		message: "must be an url for GIF, JPG or PNG image."
 	}
+
+	def self.latest
+		Product.order(:updated_at).last
+	end
 
 end

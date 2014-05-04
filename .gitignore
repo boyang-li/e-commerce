@@ -16,7 +16,7 @@
 /tmp
 
 # Ignore image assets
-# /app/assets/images/
+/app/assets/images/
 
 # Ignore Mac OS ".DS_Store" files
 .DS_Store
