@@ -14,10 +14,13 @@ gem 'turbolinks'
 gem 'bcrypt-ruby', '~> 3.1.2'
 # Use unicorn as the app server
 # gem 'unicorn'
+gem "devise"
+
+# gems for Twitter Bootstrap 3 integration
 gem "therubyracer"
 gem "less-rails"
 gem "twitter-bootstrap-rails"
-gem "devise"
+
 
 group :development do
 	# gem 'annotate'
