@@ -20,7 +20,7 @@
       <tr>
         <td><%= link_to product.id, product_path(product) %></td>
         <td><%= product.model %></td>
-        <td><%= product.image %></td>
+        <td><%= image_tag(product.image, class: 'list_image') %></td>
         <td><%= product.price %></td>
         <td><%= product.points %></td>
         <td><%= product.date_available %></td>
@@ -42,3 +42,4 @@
 <%= link_to t('.new', :default => t("helpers.links.new")),
             new_product_path,
             :class => 'btn btn-primary' %>
+
