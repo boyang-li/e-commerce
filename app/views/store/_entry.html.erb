@@ -1,0 +1,8 @@
+<div class="entry">
+  <%= image_tag(product.image, class: 'list_image') %>
+  <h3><%= product.product_description.name %></h3>
+  <%= sanitize(product.product_description.description) %>
+  <div class="price_line">
+	<span class="price"><%= number_to_currency(product.price) %></span>
+  </div>
+</div>
