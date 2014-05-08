@@ -1,0 +1,19 @@
+{
+  "name": "openshop",
+  "description": "A Rails e-commerce platform",
+  "version": "1.0.0",
+  "main": "path/to/main.css",
+  "ignore": [
+	".jshintrc",
+	"**/*.txt",
+	"bower_components",
+	"**/.*",
+	"test"
+  ],
+  "dependencies": {
+	"bootstrap": "~3.0.0"
+  },
+  "devDependencies": {
+	"bootstrap": "~3.0.0"
+  }
+}

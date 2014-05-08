@@ -16,11 +16,9 @@ gem 'bcrypt-ruby', '~> 3.1.2'
 # gem 'unicorn'
 gem "devise"
 
-# gems for Twitter Bootstrap 3 integration
+# gems to install LESS compiler
 gem "therubyracer"
 gem "less-rails"
-gem "twitter-bootstrap-rails"
-
 
 group :development do
 	# gem 'annotate'
