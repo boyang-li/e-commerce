@@ -39,79 +39,107 @@
 <body class='<%= controller.controller_name %>'>
   <!-- Header ====================================================================== -->
   <div id="header">
+    <!-- Welcome Line =========================================== -->
     <div class="container">
-      <div id="welcomeLine" class="row">
+      <div id="headerRow" class="row">
         <% if current_user %>
-          <div class="span6">Welcome!<strong> <%= current_user.email %></strong></div>
+          <div class="span4 pull-left">Welcome!<strong> <%= current_user.email %></strong></div>
         <% else %>
-          <div class="span6">Welcome!<strong> Guest</strong></div>
+          <div class="span4 pull-left">Welcome!<strong> Guest</strong></div>
         <% end %>
-        <div class="span6">
-        <div class="pull-right">
+        <div class="span6 pull-right">
           <a href="#"><span class="">Fr</span></a>
           <a href="#"><span class="">Es</span></a>
           <span class="btn btn-mini">En</span>
           <a href="#"><span>&pound;</span></a>
           <span class="btn btn-mini">$155.00</span>
           <a href="#"><span class="">$</span></a>
-          <a href="#"><span class="btn btn-mini btn-primary"><i class="icon-shopping-cart icon-white"></i> [ 3 ] Itemes in your cart </span> </a>
+          <a href="#"><span class="btn btn-mini btn-primary"><i class="fa fa-shopping-cart"></i> [ 3 ] Itemes in your cart</span> </a>
         </div>
       </div>
     </div>
     <!-- Navbar ================================================== -->
-    <nav id="logoArea" class="navbar navbar-inverse">
-      <a id="smallScreen" data-target="#topMenu" data-toggle="collapse" class="btn btn-navbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </a>
-      <div class="navbar-inner">
-        <a class="brand" href="index.html">OpenShop</a>
-        <form class="form-inline navbar-search" method="post" action="products.html" >
-          <input id="srchFld" class="srchTxt" type="text" />
-          <select class="srchTxt">
-            <option>All</option>
-            <option>CLOTHES </option>
-            <option>FOOD AND BEVERAGES </option>
-            <option>HEALTH & BEAUTY </option>
-            <option>SPORTS & LEISURE </option>
-            <option>BOOKS & ENTERTAINMENTS </option>
-          </select>
-          <button type="submit" id="submitButton" class="btn btn-primary">Go</button>
-        </form>
-        <ul id="topMenu" class="nav pull-right">
-          <li class=""><a href="special_offer.html">Specials Offer</a></li>
-          <li class=""><a href="normal.html">Delivery</a></li>
-          <li class=""><a href="contact.html">Contact</a></li>
-          <li class=""><a href="#login" role="button" data-toggle="modal" style="padding-right:0"><span class="btn btn-large btn-success">Login</span></a>
-          <div id="login" class="modal hide fade in" tabindex="-1" role="dialog" aria-labelledby="login" aria-hidden="false" >
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-            <h3>Login</h3>
+    <nav id="logoArea" class="navbar navbar-default navbar-static-top navbar-inverse" role="navigation">
+      <div class="container">
+        <div id="headerRow" class="row">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">OpenShop</a>
           </div>
-          <div class="modal-body">
-          <%= simple_form_for(:user, :url => session_path(:user)) do |f| %>
-            <div class="form-inputs">
-              <%= f.input :email, :required => false, :autofocus => true %>
-              <%= f.input :password, :required => false %>
-              <%= f.input :remember_me, :as => :boolean %>
-            </div>
-            <div class="form-actions">
-              <%= f.button :submit, "Sign in", class: "btn btn-success" %>
-              <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-              <p>Don't have an account? <%= link_to "Sign up", new_user_registration_path %></p>
-            </div>
-          <% end %>
-          </div>
-          </div>
-          </li>
-        </ul>
-      </div>
-    </nav>
-    <!-- Navbar End -->
-  </div><!-- Container End -->
+
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Product Categories <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Electronics</a></li>
+                  <li><a href="#">Clothes</a></li>
+                  <li><a href="#">Food&Beverages</a></li>
+                  <li class="divider"></li>
+                  <li><a href="#">Separated link</a></li>
+                  <li class="divider"></li>
+                  <li><a href="#">One more separated link</a></li>
+                </ul>
+              </li>
+            </ul>
+            <ul id="topMenu" class="nav navbar-nav navbar-right">
+              <li>
+                <form class="navbar-form navbar-left" role="search" method="post" action="products.html">
+                  <div class="form-group">
+                    <input type="text" class="form-control" placeholder="I want to buy...">
+                  </div>
+                  <button type="submit" class="btn btn-default"><i class="fa fa-search"></i> search</button>
+                </form>
+              </li>
+              <li><a href="special_offer.html">Specials Offer</a></li>
+              <li><a href="normal.html">Delivery</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li>
+                <!-- Button trigger modal -->
+                <button class="btn btn-success btn-lg" data-toggle="modal" data-target="#loginModal">
+                  Login
+                </button>
+              </li>
+            </ul>
+          </div><!-- Collection End -->
+        </div>
+      </div><!-- Container End -->
+    </nav><!-- Navbar End -->
   </div>
 <!-- Header End -->
+<!-- Login Modal -->
+<div id="loginModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true" >
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="loginModalLabel">Login</h4>
+      </div>
+      <div class="modal-body">
+        <%= simple_form_for(:user, :url => session_path(:user)) do |f| %>
+          <div class="form-inputs">
+            <%= f.input :email, :required => false, :autofocus => true %>
+            <%= f.input :password, :required => false %>
+            <%= f.input :remember_me, :as => :boolean %>
+          </div> 
+      </div>
+      <div class="modal-footer">
+        <div class="form-actions">
+            <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+            <%= f.button :submit, "Sign in", class: "btn btn-success" %>
+            <p>Don't have an account? <%= link_to "Sign up", new_user_registration_path %></p>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div><!-- Login Modal End-->
 <!-- Main Body ================================================== -->
 <div id="mainBody">
   <div class="container">
@@ -184,9 +212,13 @@
   <!-- Yield Content =============================================== -->
   <div class="span9">
     <div class="well well-small">
+      <%= bootstrap_flash %>
       <%= yield %>
     </div>
   </div>
+
+  </div><!-- Row End -->
+  </div><!-- Container End -->
 
   </div><!-- Row End -->
   </div><!-- Container End -->
@@ -204,7 +236,7 @@
       <a href="login.html">DISCOUNT</a>
       <a href="login.html">ORDER HISTORY</a>
      </div>
-    <div class="span3">
+    <div class="span3 offset3">
       <h5>INFORMATION</h5>
       <a href="contact.html">CONTACT</a>
       <a href="register.html">REGISTRATION</a>
@@ -212,7 +244,7 @@
       <a href="tac.html">TERMS AND CONDITIONS</a>
       <a href="faq.html">FAQ</a>
      </div>
-    <div class="span3">
+    <div class="span3 offset6">
       <h5>OUR OFFERS</h5>
       <a href="#">NEW PRODUCTS</a>
       <a href="#">TOP SELLERS</a>

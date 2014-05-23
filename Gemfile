@@ -19,7 +19,8 @@ gem "devise"
 # gems for Twitter Bootstrap 3 integration
 gem "therubyracer"
 gem "less-rails"
-gem "twitter-bootstrap-rails"
+gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git',
+  :branch => 'bootstrap3'
 
 
 group :development do
