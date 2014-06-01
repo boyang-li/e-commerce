@@ -1,3 +1,23 @@
-#headerRow {padding: 8px 0 4px;}
-#logoArea {background-color: #3A3F44;}
-#srchBtn {background: image-url("search.png") no-repeat 4px center #fff;}
+#headerRow {
+  padding: 8px 0 4px;
+}
+
+#logoArea {
+  background-color: #3A3F44;
+}
+
+#srchBtn {
+  background: image-url("search.png") no-repeat 4px center #fff;
+}
+
+.slide-image {
+  width: 100%;
+}
+
+.carousel-holder {
+  margin-bottom: 20px;
+}
+
+.carousel-control,.item {
+  border-radius: 4px;
+}

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140413162018) do
+ActiveRecord::Schema.define(version: 20140601054707) do
 
   create_table "attribute_descriptions", force: true do |t|
     t.integer "attribute_id"
@@ -31,6 +31,11 @@ ActiveRecord::Schema.define(version: 20140413162018) do
 
   create_table "attribute_groups", force: true do |t|
     t.integer "sort_order", limit: 3
+  end
+
+  create_table "carts", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "categories", force: true do |t|
@@ -55,6 +60,16 @@ ActiveRecord::Schema.define(version: 20140413162018) do
   end
 
   add_index "general_attributes", ["attribute_group_id"], name: "index_general_attributes_on_attribute_group_id", using: :btree
+
+  create_table "line_items", force: true do |t|
+    t.integer  "product_id"
+    t.integer  "cart_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "line_items", ["cart_id"], name: "index_line_items_on_cart_id", using: :btree
+  add_index "line_items", ["product_id"], name: "index_line_items_on_product_id", using: :btree
 
   create_table "manufacturers", force: true do |t|
     t.string  "name",       limit: 64, null: false

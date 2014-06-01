@@ -1,17 +1,168 @@
-<div class="container">
-    <div class="well well-sm">
-        <strong>View Style</strong>
-        <div class="btn-group">
-            <a href="#" id="list" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-th-list">
-            </span>List</a> <a href="#" id="grid" class="btn btn-default btn-sm"><span
-                class="glyphicon glyphicon-th"></span>Grid</a>
+<div class="row">
+
+    <!-- Sidebar ================================================== -->
+    <div class="col-md-3">
+      <div class="well well-small">
+        <a id="myCart" href="product_summary.html">
+          <%= image_tag "ico-cart.png", alt: "cart" %>3 Items in your cart  <span class="badge badge-warning pull-right">$155.00</span>
+        </a>
+      </div>
+      
+      <div class="panel-group" id="accordion">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h4 class="panel-title">
+                  <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                  <i class="fa fa-headphones"></i> Electronics</a>
+                  <i class="fa fa-angle-right collapse-icon"></i>
+                </h4>
+              </div>
+              <div id="collapseOne" class="panel-collapse collapse in">
+                <ul class="list-group">
+                  <li class="list-group-item"><span class="glyphicon glyphicon-flash text-primary"></span><a href="#">Laptops</a><span class="badge">22</span></li>
+                  <li class="list-group-item"><span class="glyphicon glyphicon-flash text-success"></span><a href="#">Cameras</a><span class="badge">10</span></li>
+                  <li class="list-group-item"><span class="glyphicon glyphicon-flash text-primary"></span><a href="">Speakers</a><span class="badge">8</span></li>
+                  <li class="list-group-item"><span class="glyphicon glyphicon-flash text-success"></span><a href="#">Headphones</a><span class="badge">12</span></li>
+                </ul>
+              </div>
+            </div>
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h4 class="panel-title">
+                  <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
+                  <i class="fa fa-book"></i> Books
+                  <i class="collapse-icon fa fa-angle-right"></i></a>
+                </h4>
+              </div>
+              <div id="collapseFour" class="panel-collapse collapse">
+                <div class="list-group">
+                  <a href="#" class="list-group-item">
+                    Cras justo odio
+                  </a>
+                  <div class="list-group">
+                    <a href="#" class="list-group-item">
+                      Cras justo odio
+                    </a>
+                    <a href="#" class="list-group-item">Dapibus ac facilisis in</a>
+                    <a href="#" class="list-group-item">Morbi leo risus</a>
+                    <a href="#" class="list-group-item">Porta ac consectetur ac</a>
+                    <a href="#" class="list-group-item">Vestibulum at eros</a>
+                  </div>
+                  <a href="#" class="list-group-item">Dapibus ac facilisis in</a>
+                  <a href="#" class="list-group-item">Morbi leo risus</a>
+                  <a href="#" class="list-group-item">Porta ac consectetur ac</a>
+                  <a href="#" class="list-group-item">Vestibulum at eros</a>
+                </div>
+              </div>
+            </div>
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h4 class="panel-title">
+                  <a data-toggle="collapse" data-parent="#accordion" href="#collapseFive">
+                  <i class="fa fa-gamepad"></i> Video Games
+                  <i id="collapse-icon" class="collapse-icon fa fa-angle-right"></i></a>
+                </h4>
+              </div>
+              <div id="collapseFive" class="panel-collapse collapse">
+                <div class="list-group">
+                  <a href="#" class="list-group-item">
+                    <h4 class="list-group-item-heading">List group item heading</h4>
+                    <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+                  </a>
+                </div>
+                <div class="list-group">
+                  <a href="#" class="list-group-item active">
+                    <h4 class="list-group-item-heading">List group item heading</h4>
+                    <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+                  </a>
+                </div>
+                <div class="list-group">
+                  <a href="#" class="list-group-item">
+                    <h4 class="list-group-item-heading">List group item heading</h4>
+                    <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+      <br/>
+        <div class="thumbnail">
+        <%= image_tag "products/panasonic.jpg", alt: "panasonic new camera" %>
+        <div class="caption">
+          <h5>Panasonic</h5>
+          <h4 style="text-align:center"><a class="btn" href="product_details.html"> <i class="icon-zoom-in"></i></a> <a class="btn" href="#">Add to <i class="icon-shopping-cart"></i></a> <a class="btn btn-primary" href="#">$222.00</a></h4>
         </div>
-    </div>
-    <div id="products" class="row list-group">
-      <% @products.each do |product| %>
-        <% cache ['entry', product] do %>
-          <%= render partial: "entry", locals: {product: product} %>
-        <% end -%>
-      <% end %>
-    </div>
-</div>
+        </div><br/>
+        <div class="thumbnail">
+          <%= image_tag "products/kindle.png",title: "New Kindle", alt: "Kindle" %>
+          <div class="caption">
+            <h5>Kindle</h5>
+              <h4 style="text-align:center"><a class="btn" href="product_details.html"> <i class="icon-zoom-in"></i></a> <a class="btn" href="#">Add to <i class="icon-shopping-cart"></i></a> <a class="btn btn-primary" href="#">$222.00</a></h4>
+          </div>
+          </div><br/>
+        <div class="thumbnail">
+          <%= image_tag "payment_methods.png", title: "Payments Methods", alt: "Payments Methods" %>
+          <div class="caption">
+            <h5>Payment Methods</h5>
+          </div>
+          </div>
+    </div><!-- Sidebar End -->
+
+    <!-- Main Content =============================================== -->
+    <div class="col-md-9">
+        <!-- Carousel Holder -->
+        <div class="row carousel-holder">
+
+            <div class="col-md-12">
+                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                        <div class="item active">
+                            <a href="#"><%= image_tag "carousel/1.png", :class => "slide-image", title: "", alt: "" %></a>
+                        </div>
+                        <div class="item">
+                            <a href="#"><%= image_tag "carousel/2.png", :class => "slide-image", title: "", alt: "" %></a>
+                        </div>
+                        <div class="item">
+                            <a href="#"><%= image_tag "carousel/3.png", :class => "slide-image", title: "", alt: "" %></a>
+                        </div>
+                    </div>
+                    <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                    </a>
+                    <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+                    </a>
+                </div>
+            </div>
+
+        </div><!-- Carousel Holder End -->
+
+        <div class="row">
+
+            <div class="well well-sm">
+                <strong>View Style</strong>
+                <div class="btn-group">
+                    <a href="#" id="grid" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-th"></span>Grid</a>
+                    <a href="#" id="list" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-th-list"></span>List</a>
+                </div>
+            </div>
+
+            <div id="products" class="row list-group">
+              <% @products.each do |product| %>
+                <% cache ['entry', product] do %>
+                  <%= render partial: "entry", locals: {product: product} %>
+                <% end -%>
+              <% end %>
+            </div>
+
+        </div>
+
+    </div><!-- Main Content End -->
+
+</div><!-- Row End -->

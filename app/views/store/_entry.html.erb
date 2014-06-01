@@ -1,20 +1,27 @@
-<div class="item  col-xs-4 col-lg-4">
-  <div class="thumbnail">
-    <%= image_tag(product.image, class: 'group list-group-image list_image') %>
-    <div class="caption">
-      <h4 class="group inner list-group-item-heading">
-        <%= product.product_description.name %></h4>
-      <p class="group inner list-group-item-text">
-        <%= sanitize(product.product_description.description) %></p>
-      <div class="row">
-        <div class="col-xs-12 col-md-6">
-          <p class="lead">
-            Price: <%= number_to_currency(product.price) %></p>
+<div class="item col-sm-4 col-lg-4 col-md-4">
+    <div class="thumbnail">
+        <%= image_tag(product.image, class: 'group list-group-image list_image') %>
+        <div class="caption">
+            <h4 class="group inner list-group-item-heading"><%= product.product_description.name %></h4>
+            <p class="group inner list-group-item-text"><%= sanitize(product.product_description.description) %></p>
         </div>
-        <div class="col-xs-12 col-md-6">
-          <%= button_to "Buy", product_path(product), :class => "btn btn-success", :method => :get  %>
+        <div class="ratings">
+            <p class="pull-right">15 reviews</p>
+            <p>
+                <span class="glyphicon glyphicon-star"></span>
+                <span class="glyphicon glyphicon-star"></span>
+                <span class="glyphicon glyphicon-star"></span>
+                <span class="glyphicon glyphicon-star"></span>
+                <span class="glyphicon glyphicon-star"></span>
+            </p>
         </div>
-      </div>
+        <div class="row">
+            <div class="col-xs-3">
+                <h4><%= number_to_currency(product.price) %></h4>
+            </div>
+            <div class="col-xs-6 pull-right">
+                <%= button_to "More", product_path(product), :class => "btn btn-primary pull-right", :method => :get  %>
+            </div>
+        </div>
     </div>
-  </div>
 </div>
