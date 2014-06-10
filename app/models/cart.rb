@@ -3,6 +3,7 @@ class Cart < ActiveRecord::Base
 
   def add_product(product_id)
     current_item = line_items.find_by(product_id: product_id)
+    logger.debug("Current item object: #{current_item.inspect}")
     if current_item
       current_item.quantity += 1
     else
