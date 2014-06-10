@@ -8,7 +8,8 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'uglifier', '>= 1.3.0'
 
 gem 'jquery-rails'
-gem 'simple_form'
+gem 'simple_form', :git => 'git://github.com/plataformatec/simple_form.git', 
+  :branch => 'bootstrap-3'
 gem 'jbuilder', '~> 2.0'
 gem 'turbolinks'
 gem 'bcrypt-ruby', '~> 3.1.2'

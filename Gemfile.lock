@@ -1,4 +1,13 @@
 GIT
+  remote: git://github.com/plataformatec/simple_form.git
+  revision: 6b685618cb011389e7a4b0430f59a88fa1e14027
+  branch: bootstrap-3
+  specs:
+    simple_form (3.0.1)
+      actionpack (~> 4.0)
+      activemodel (~> 4.0)
+
+GIT
   remote: git://github.com/seyhunak/twitter-bootstrap-rails.git
   revision: 0d430bc229e4e61591ca1615aae513a3416cc5f1
   branch: bootstrap3
@@ -155,9 +164,6 @@ GEM
     sdoc (0.4.0)
       json (~> 1.8)
       rdoc (~> 4.0, < 5.0)
-    simple_form (3.0.2)
-      actionpack (~> 4.0)
-      activemodel (~> 4.0)
     spring (1.1.2)
     sprockets (2.11.0)
       hike (~> 1.2)
@@ -209,7 +215,7 @@ DEPENDENCIES
   rspec-rails
   sass-rails
   sdoc (~> 0.4.0)
-  simple_form
+  simple_form!
   spring
   therubyracer
   turbolinks
